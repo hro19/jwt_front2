@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { User } from "@/ts/User";
+import { User } from "@/types/User";
 
 export async function GET() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASIC_URL}/users`);

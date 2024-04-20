@@ -1,6 +1,5 @@
-export const runtime = 'edge'
 import { NextResponse } from 'next/server';
-import { User } from "@/ts/User";
+import { User } from "@/types/User";
 
 export async function GET(
   request: Request,
