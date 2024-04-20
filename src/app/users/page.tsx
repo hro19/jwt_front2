@@ -1,10 +1,11 @@
 import React from "react";
 import UserTable from "@/components/UserTable";
 import { User } from "@/types/User";
+import { getUsers } from "@/app/actions/getUsers";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Page() {
-  const users: User[] = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/users`, {cache: 'no-store'}).then(response => response.json());
+  const users = await getUsers();
 
   return (
     <>

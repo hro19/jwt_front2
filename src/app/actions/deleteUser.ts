@@ -1,15 +1,18 @@
 'use server'
 
+import { handleFailed, handleSucceed, path } from "./";
 import { revalidatePath } from 'next/cache'
 
 export const deleteUser = async (userId: string) => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASIC_URL}/users/${userId}`, {
-    method: 'DELETE',
-  })
 
-  if (!response.ok) {
-    throw new Error('Failed to delete user')
-  }
+    try {
+        const response = await fetch(path(`/users/${userId}`), {
+            method: 'DELETE',
+        })
 
-  revalidatePath('/users') // ユーザー一覧ページを再検証
+        handleSucceed(response)
+        revalidatePath('/users') // ユーザー一覧ページを再検証
+    } catch (error) {
+        handleFailed(error)
+    }
 }
