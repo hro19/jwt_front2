@@ -1,9 +1,12 @@
-import Image from "next/image";
+import { Container, Heading, Text } from "@yamada-ui/react";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
-      <h2 className="text-3xl text-emerald-600">トップページです</h2>
-    </div>
+<Container>
+  <Heading size="xl" className="text-green-700">トップページです</Heading>
+  <Text>
+   Next.jsの最新14.2.0で作成されてます。
+  </Text>
+</Container>
   );
 }
