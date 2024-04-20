@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import AppProvider from "./provider";
 import "./globals.css";
+import GlobalMenu from "@/components/common/GlobalMenu";
+import UtilityMenu from "@/components/common/UtilityMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+          <UtilityMenu />
+          <GlobalMenu />
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
