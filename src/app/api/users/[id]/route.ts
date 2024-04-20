@@ -9,7 +9,9 @@ export async function GET(
   const apiUrl = `${process.env.NEXT_PUBLIC_API_BASIC_URL}/users/${id}`;
 
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      cache: 'no-store',
+    });
     const user: User = await response.json();
 
     if (!response.ok) {
