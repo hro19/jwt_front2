@@ -16,8 +16,8 @@ export default async function Page({ params }: { params: { id: string } }){
       <div className="container mx-auto my-4">
         <h2 className="text-3xl font-bold text-center mb-4">個人ユーザ情報所得</h2>
         <div className="border px-3 py-4 mb-5">
-          <p>【ユーザーID】{user._id}</p>
-          <p>【ユーザーネーム】{user.username}</p>
+          <p><span className="text-cyan-500/70">【ユーザーID】</span>{user._id}</p>
+          <p><span className="text-lime-500/70">【ユーザーネーム】</span>{user.username}</p>
         </div>
         <div className="grid gap-4 mx-2 grid-cols-1 lg:grid-cols-3 lg:mx-3">
           {userTasks && userTasks.map((task: Task) => (
