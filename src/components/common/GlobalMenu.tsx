@@ -11,12 +11,20 @@ const gMenus = [
     text: "ユーザー一覧",
   },
   {
+    href: "/users/64ca465b59acf1aa11d7152b",
+    text: "個人ユーザ情報所得", 
+  },
+  {
     href: "/tasks",
     text: "タスク一覧",
   },
   {
     href: "/api/users",
     text: "APIユーザー一覧",
+  },
+  {
+    href: "/api/users/64ca465b59acf1aa11d7152b",
+    text: "API個人ユーザー",
   },
   {
     href: "/api/tasks",
