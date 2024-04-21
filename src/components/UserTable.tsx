@@ -6,12 +6,7 @@ import { Button } from "@yamada-ui/react";
 import { deleteUser } from '@/app/actions/deleteUser'
 
 const UserTable = ({ user }: {user:User}) => {
-  const deleteHandler = async () => {
-    try {
-      await deleteUser(user._id);
-    } catch (error) {
-    }
-  };
+  const deleteHandler = async () => await deleteUser(user._id);
 
   return (
     <>
