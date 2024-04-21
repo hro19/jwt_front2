@@ -8,8 +8,8 @@ import { getSingleUser } from "@/app/actions/getSingleUser";
 export default async function Page({ params }: { params: { id: string } }){
   const id = params.id;
   const { user, userTasks } = await getSingleUser(id);
-  console.log(user)
-  console.log(userTasks)
+  // console.log(user)
+  // console.log(userTasks)
 
   return (
     <>
