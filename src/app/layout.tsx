@@ -14,17 +14,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
           <UtilityMenu />
           <GlobalMenu />
-        <AppProvider>{children}{modal}</AppProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
