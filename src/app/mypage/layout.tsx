@@ -9,7 +9,7 @@ export default function RootLayout({
       <div>
         <div className="sub_menu flex justify-center gap-3">
           <Box as={"a"} className="bg-blue-500 text-white px-7 py-3 rounded-md hover:bg-blue-500/70 duration-700" href="/mypage">マイページ</Box>
-          <Box as={"a"} className="bg-blue-500 text-white px-7 py-3 rounded-md hover:bg-blue-500/70 duration-700" href="/mypage/tasks">タスク</Box>
+          <Box as={"a"} className="bg-blue-500 text-white px-7 py-3 rounded-md hover:bg-blue-500/70 duration-700" href="/mypage/tasks">マイページ他のインフォ（未設定）</Box>
         </div>
         {children}
       </div>
