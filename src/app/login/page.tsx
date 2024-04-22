@@ -34,7 +34,7 @@ function Login() {
         password,
       });
       setCookie("token", res.data.token, { maxAge: 60 * 60 * 24 });
-      router.push(`/users/${res.data.user._id}`);
+      router.push(`mypage`);
     } catch (err) {
       // console.log(err);
       const cherrors = (err as any).data.errors;
