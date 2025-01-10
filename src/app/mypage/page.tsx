@@ -8,7 +8,7 @@ import { getSingleUser } from "@/app/actions/getSingleUser";
 export default async function Page() {
 
   //tokenの取得と有効性の確認
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const token = cookieStore.get('token');
   if (!token) redirect('/login');
 

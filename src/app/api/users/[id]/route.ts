@@ -5,7 +5,7 @@ export async function GET(
   request: Request,
   { params }: { params: { id: string } }
 ) {
-  const id = params.id;
+  const {id} = await params;
   const apiUrl = `${process.env.NEXT_PUBLIC_API_BASIC_URL}/users/${id}`;
 
   try {
