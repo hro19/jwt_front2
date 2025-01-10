@@ -1,11 +1,18 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server';
+
+// Define the expected context type
+type Context = {
+  params: {
+    id: string;
+  };
+};
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: Context
 ) {
-  // paramsから直接idを取得
-  const { id } = params
+  // Destructure id from params
+  const { id } = params;
 
   try {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -13,15 +20,15 @@ export async function GET(
         'Content-Type': 'application/json',
       },
       next: { revalidate: 0 }
-    })
-    const data = await res.json()
+    });
+    const data = await res.json();
 
     if (res.ok) {
-      return NextResponse.json({ data })
+      return NextResponse.json({ data });
     } else {
-      return NextResponse.json({ message: 'Post not found' }, { status: 404 })
+      return NextResponse.json({ message: 'Post not found' }, { status: 404 });
     }
   } catch (error: any) {
-    return NextResponse.json({ message: error.message }, { status: 500 })
+    return NextResponse.json({ message: error.message }, { status: 500 });
   }
 }
