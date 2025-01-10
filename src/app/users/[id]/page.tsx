@@ -6,7 +6,7 @@ import { getSingleUser } from "@/app/actions/getSingleUser";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Page({ params }: { params: { id: string } }){
-  const id = params.id;
+  const {id} = params;
   const { user, userTasks } = await getSingleUser(id);
   // console.log(user)
   // console.log(userTasks)
