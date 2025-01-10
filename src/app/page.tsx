@@ -5,7 +5,7 @@ export default function Home() {
 <Container>
   <Heading size="xl" className="text-green-700">トップページです</Heading>
   <Text>
-   Next.jsの最新14.2.0で作成されてます。
+   Next.jsの最新15.1.4で作成されてます。reactは19.0.0です。
   </Text>
 </Container>
   );
