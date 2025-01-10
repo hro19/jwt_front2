@@ -1,17 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { User } from "@/types/User";
 
+type NextRequestContext = {
+  params: {
+    id: string;
+  };
+};
+
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: NextRequestContext
 ) {
-  const id = params.id;  // awaitは不要です
+  const { id } = context.params;  // Destructuring to get the id
   const apiUrl = `${process.env.NEXT_PUBLIC_API_BASIC_URL}/users/${id}`;
 
   try {
     const response = await fetch(apiUrl, {
       next: { 
-        revalidate: 0  // 'no-store'の代わりにこちらを使用
+        revalidate: 0  // Using revalidate instead of 'no-store'
       }
     });
     const user: User = await response.json();
